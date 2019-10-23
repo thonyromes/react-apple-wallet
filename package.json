@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "description": "react component inspired by the iOS passbook app UI",
   "main": "dist/index.js",
+  "private": true,
   "keywords": [
     "react",
     "react-component",
@@ -13,19 +14,24 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/cameronbourke/cardstack.git"
+    "url": "https://github.com/elainegasca/react-cardstack"
   },
   "scripts": {
-    "start": "webpack-dev-server --content-base example/",
+    "start": "yarn develop:example & yarn develop",
+    "develop": "webpack --watch",
+    "develop:example": "webpack-dev-server --config example/webpack.config.js",
     "build:compile": "babel src --out-dir dist",
     "build:umd": "webpack",
     "build:example": "webpack --config ./example/webpack.config.js --progress --colors",
-    "build:all": "yarn run build:compile && yarn run build:umd && yarn run build:example"
+    "build:all": "yarn run build:compile && yarn run build:umd && yarn run build:example",
+    "format:prettier": "prettier --write --ignore-path .eslintignore 'src/**/*.js'",
+    "prettier:test": "prettier --check 'src/**/*.js'",
+    "lint": "eslint 'src/**/*.{js,json,css}'"
   },
   "files": [
     "dist"
   ],
-  "author": "Cameron Bourke <cameron2295@gmail.com> (http://cameronbourke.com/)",
+  "author": "Rodrigo Maldonado <elaineeeit@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "prop-types": "^15.5.7"
@@ -36,7 +42,18 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.40",
     "@babel/preset-env": "^7.0.0-beta.40",
     "@babel/preset-react": "^7.0.0-beta.40",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "8.0.0-beta.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
     "react": "15.3.0",
     "react-dom": "15.3.0",
     "webpack": "^3.11.0",
@@ -44,5 +61,17 @@
   },
   "peerDependencies": {
     "react": ">=15.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn lint",
+      "yarn format:prettier",
+      "git add"
+    ]
   }
 }

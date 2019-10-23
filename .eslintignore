@@ -1,0 +1,11 @@
+node_modules/
+dist/
+build/
+mocks/
+scripts/
+public/
+internal/
+coverage/
+src/registerServiceWorker.js
+config/
+example/
