@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react';
 
 class Card extends React.Component {
@@ -27,7 +29,8 @@ class Card extends React.Component {
   render() {
     const { cardId, cardSelected, topOffset, hoverOffset } = this.props;
 
-    const offset = (cardId !== 0) && this.state.hover && !cardSelected ? hoverOffset : 0;
+    const offset =
+      cardId !== 0 && this.state.hover && !cardSelected ? hoverOffset : 0;
     const transform = `translate3d(0,${topOffset - offset}px,0)`;
 
     const cardStyles = {

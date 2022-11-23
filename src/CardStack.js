@@ -1,8 +1,11 @@
+/* eslint-disable */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const equalsZero = num => num === 0;
-const errorMessage = 'CardStack component must have at least two child Card components. Please check the children of this CardStack instance.';
+const errorMessage =
+  'CardStack component must have at least two child Card components. Please check the children of this CardStack instance.';
 
 class CardStack extends React.Component {
   constructor(props) {
@@ -13,8 +16,9 @@ class CardStack extends React.Component {
 
     if (childrenLength <= 1) throw new Error(errorMessage);
 
-    this.initialTopOffsets = props.children
-			.map((child, i) => (equalsZero(i) ? 0 : headerHeight * i));
+    this.initialTopOffsets = props.children.map((child, i) =>
+      equalsZero(i) ? 0 : headerHeight * i
+    );
 
     this.state = {
       topOffsets: this.initialTopOffsets,
@@ -24,7 +28,9 @@ class CardStack extends React.Component {
 
   componentWillMount() {
     if (this.props.initialCard >= this.props.children.length)
-      console.warn('prop "initialCard" cannot be equal or greater than children.length');
+      console.warn(
+        'prop "initialCard" cannot be equal or greater than children.length'
+      );
     else if (this.props.initialCard >= 0)
       this.handleCardClick(this.props.initialCard);
   }
@@ -37,7 +43,7 @@ class CardStack extends React.Component {
     const { cardSelected } = this.state;
 
     const nextState = (prev, offset, index) => {
-      const newOffset = (index === id) ? 0 : this.props.height;
+      const newOffset = index === id ? 0 : this.props.height;
       return {
         cardSelected: !cardSelected,
         topOffsets: [
@@ -74,11 +80,7 @@ class CardStack extends React.Component {
       height: this.props.height,
       width: this.props.width,
     };
-    return (
-      <ul style={stackStyles}>
-        {this.renderCards()}
-      </ul>
-    );
+    return <ul style={stackStyles}>{this.renderCards()}</ul>;
   }
 }
 

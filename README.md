@@ -8,7 +8,7 @@ Built for React, this component allows you to achieve a UI similar to the iOS pa
 react-cardstack requires **React 15.3.0 or later.**
 
 ```
-npm install --save react-cardstack
+npm install --save react-cardstack-fix
 ```
 
 ## Demo & Example
