@@ -14,9 +14,9 @@ class CardStack extends React.Component {
 
     if (childrenLength <= 1) throw new Error(errorMessage);
 
-    this.initialTopOffsets = props.children.map((_, i) =>
-      i === 0 ? 0 : headerHeight * i
-    );
+    this.initialTopOffsets = props.children.map((_, i) => {
+      return i === 0 ? 0 : headerHeight * i;
+    });
 
     this.state = {
       topOffsets: this.initialTopOffsets,
