@@ -66,6 +66,7 @@ height      | number | 600px  | the height of the component
 background  | string | f8f8f8 | can be a hex, rgba, gradiant value or a url()
 hoverOffset | number | 30px   | how far the card will shift up when being hovered
 initialCard | number | -1     | if provided, the card at i'th index will be initially visible
+style       | number | {}     | custom style for the cardStack
 
 ### Card
 
@@ -73,6 +74,8 @@ Property  | Type | Default | Description
 ------------- | ------------- | ------- | -------
 background  | string | undefined | can be a hex, rgba, gradiant value or a url()
 cardClicked | func   | undefined | read below for description on how to use
+style       | number | {}        | custom style for the card
+buttonStyle | number | {}        | custom style for the card button wrapper
 
 `cardClicked` is a prop which can be passed to `Card`. It takes a function, acting as a callback, and will get invoked when a user clicks on the card in which you passed it to. For example, look below:
 

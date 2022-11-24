@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { onEnterPressed } from './handleKeyboardPressed';
 
 class Card extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class Card extends React.Component {
 
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleMouseEnter() {
@@ -55,10 +57,19 @@ class Card extends React.Component {
         <button
           style={{ ...buttonStyles, ...buttonStyle }}
           type="button"
-          onClick={this.handleClick.bind(this)}
+          onClick={event => {
+            // If not keypress
+            if (event.detail !== 0) {
+              this.handleClick();
+            }
+          }}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
-          onKeyUp={this.handleClick.bind(this)}
+          onKeyUp={event => {
+            if (onEnterPressed(event)) {
+              this.handleClick();
+            }
+          }}
         >
           {children}
         </button>

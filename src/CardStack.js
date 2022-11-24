@@ -98,6 +98,7 @@ const styles = {
   overflow: 'hidden',
   padding: 0,
   margin: 0,
+  listStyle: 'none',
 };
 
 CardStack.propTypes = {
