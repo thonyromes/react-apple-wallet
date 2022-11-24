@@ -97,6 +97,7 @@ const styles = {
   cursor: 'pointer',
   transition: '0.5s transform ease',
   WebkitTransition: '-webkit-transform 0.5s ease',
+  transformStyle: 'preserve-3d',
 };
 
 const buttonStyles = {

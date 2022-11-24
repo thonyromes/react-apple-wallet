@@ -12266,7 +12266,8 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         width: "100%",
         cursor: "pointer",
         transition: "0.5s transform ease",
-        WebkitTransition: "-webkit-transform 0.5s ease"
+        WebkitTransition: "-webkit-transform 0.5s ease",
+        transformStyle: "preserve-3d"
       },
       h = {
         display: "inherit",
