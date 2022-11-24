@@ -22,6 +22,8 @@ class CardStack extends React.Component {
       topOffsets: this.initialTopOffsets,
       cardSelected: false,
     };
+
+    this.handleCardClick = this.handleCardClick.bind(this);
   }
 
   componentDidMount() {
@@ -71,7 +73,7 @@ class CardStack extends React.Component {
         cardSelected,
         height,
         topOffset: topOffsets[i],
-        onClick: this.handleCardClick.bind(this),
+        onClick: this.handleCardClick,
       });
 
     return children.map(cloneCard);

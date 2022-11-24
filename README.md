@@ -73,22 +73,22 @@ style       | number | {}     | custom style for the cardStack
 Property  | Type | Default | Description
 ------------- | ------------- | ------- | -------
 background  | string | undefined | can be a hex, rgba, gradiant value or a url()
-cardClicked | func   | undefined | read below for description on how to use
+onCardClick | func   | undefined | read below for description on how to use
 style       | number | {}        | custom style for the card
 buttonStyle | number | {}        | custom style for the card button wrapper
 
-`cardClicked` is a prop which can be passed to `Card`. It takes a function, acting as a callback, and will get invoked when a user clicks on the card in which you passed it to. For example, look below:
+`onCardClick` is a prop which can be passed to `Card`. It takes a function, acting as a callback, and will get invoked when a user clicks on the card in which you passed it to and it returns `cardId`, `cardSelected`, `topOffset` values. For example, look below:
 
 ```js
 <Card
 	background='#27AE60'
-	cardClicked={this.handleCardClick.bind(this)}>
+	onCardClick={this.handleCardClick.bind(this)}>
 	<NumberTwo />
 </Card>
 
 // example of the function being bound
-handleCardClick(isCardSelected) {
-	console.log(isCardSelected);
+handleCardClick(cardId, cardSelected, topOffset) {
+	console.log(cardId, cardSelected, topOffset);
 }
 ```
 

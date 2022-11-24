@@ -21,8 +21,20 @@ class Card extends React.Component {
   }
 
   handleClick() {
-    const { cardId, onClick } = this.props;
+    const {
+      cardId,
+      onClick,
+      onCardClick,
+      cardSelected,
+      topOffset,
+    } = this.props;
+
     onClick(cardId);
+
+    if (onCardClick) {
+      onCardClick(cardId, !cardSelected, topOffset);
+    }
+
     this.setState({ hover: false });
   }
 
@@ -114,6 +126,7 @@ Card.propTypes = {
   topOffset: PropTypes.number,
   cardId: PropTypes.number || PropTypes.string,
   onClick: PropTypes.func,
+  onCardClick: PropTypes.func,
   buttonStyle: PropTypes.shape(),
 };
 
@@ -127,6 +140,7 @@ Card.defaultProps = {
   topOffset: undefined,
   cardId: undefined,
   onClick: () => {},
+  onCardClick: () => {},
   buttonStyle: {},
 };
 

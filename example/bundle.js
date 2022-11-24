@@ -10205,10 +10205,10 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       }
       function c(e) {
         var n,
-          r = P.getDisplayName(e),
-          o = P.getElement(e),
-          a = P.getOwnerID(e);
-        return a && (n = P.getDisplayName(a)), "production" !== t.env.NODE_ENV && b(o, "ReactComponentTreeHook: Missing React element for debugID %s when building stack", e), i(r, o && o._source, n);
+          r = k.getDisplayName(e),
+          o = k.getElement(e),
+          a = k.getOwnerID(e);
+        return a && (n = k.getDisplayName(a)), "production" !== t.env.NODE_ENV && b(o, "ReactComponentTreeHook: Missing React element for debugID %s when building stack", e), i(r, o && o._source, n);
       }
       var u,
         s,
@@ -10271,7 +10271,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         };
       }
       var S = [],
-        P = {
+        k = {
           onSetChildren: function onSetChildren(e, n) {
             var r = s(e);
             r || ("production" !== t.env.NODE_ENV ? v(!1, "Item must have been set") : m("144")), r.childIDs = n;
@@ -10312,7 +10312,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             S.push(e);
           },
           purgeUnmountedComponents: function purgeUnmountedComponents() {
-            if (!P._preventPurging) {
+            if (!k._preventPurging) {
               for (var e = 0; e < S.length; e++) {
                 o(S[e]);
               }
@@ -10332,11 +10332,11 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             }
             var o = h.current,
               c = o && o._debugID;
-            return t += P.getStackAddendumByID(c);
+            return t += k.getStackAddendumByID(c);
           },
           getStackAddendumByID: function getStackAddendumByID(e) {
             for (var t = ""; e;) {
-              t += c(e), e = P.getParentID(e);
+              t += c(e), e = k.getParentID(e);
             }
             return t;
           },
@@ -10345,7 +10345,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             return t ? t.childIDs : [];
           },
           getDisplayName: function getDisplayName(e) {
-            var t = P.getElement(e);
+            var t = k.getElement(e);
             return t ? a(t) : null;
           },
           getElement: function getElement(e) {
@@ -10353,7 +10353,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             return t ? t.element : null;
           },
           getOwnerID: function getOwnerID(e) {
-            var t = P.getElement(e);
+            var t = k.getElement(e);
             return t && t._owner ? t._owner._debugID : null;
           },
           getParentID: function getParentID(e) {
@@ -10366,7 +10366,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             return null != n ? n._source : null;
           },
           getText: function getText(e) {
-            var t = P.getElement(e);
+            var t = k.getElement(e);
             return "string" == typeof t ? t : "number" == typeof t ? "" + t : null;
           },
           getUpdateCount: function getUpdateCount(e) {
@@ -10382,14 +10382,14 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
                 o = r && r._debugID;
               try {
                 for (e && n.push({
-                  name: o ? P.getDisplayName(o) : null,
+                  name: o ? k.getDisplayName(o) : null,
                   fileName: t ? t.fileName : null,
                   lineNumber: t ? t.lineNumber : null
                 }); o;) {
-                  var i = P.getElement(o),
-                    a = P.getParentID(o),
-                    c = P.getOwnerID(o),
-                    u = c ? P.getDisplayName(c) : null,
+                  var i = k.getElement(o),
+                    a = k.getParentID(o),
+                    c = k.getOwnerID(o),
+                    u = c ? k.getDisplayName(c) : null,
                     s = i && i._source;
                   n.push({
                     name: u,
@@ -10405,7 +10405,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             "function" == typeof console.reactStackEnd && console.reactStackEnd();
           }
         };
-      e.exports = P;
+      e.exports = k;
     }).call(t, n(0));
   }, function (e, t, n) {
     "use strict";
@@ -10638,7 +10638,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         } catch (e) {}
       }), e.exports = function (e, n) {
         function l(e) {
-          var t = e && (k && e[k] || e[C]);
+          var t = e && (P && e[P] || e[C]);
           if ("function" == typeof t) return t;
         }
         function f(e, t) {
@@ -10742,7 +10742,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           if (!Array.isArray(e)) return "production" !== t.env.NODE_ENV && s("Invalid argument supplied to oneOfType, expected an instance of array."), r;
           for (var o = 0; o < e.length; o++) {
             var i = e[o];
-            if ("function" != typeof i) return s("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + P(i) + " at index " + o + "."), r;
+            if ("function" != typeof i) return s("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + k(i) + " at index " + o + "."), r;
           }
           return d(n);
         }
@@ -10825,7 +10825,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           }
           return t;
         }
-        function P(e) {
+        function k(e) {
           var t = S(e);
           switch (t) {
             case "array":
@@ -10842,7 +10842,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         function x(e) {
           return e.constructor && e.constructor.name ? e.constructor.name : j;
         }
-        var k = "function" == typeof Symbol && Symbol.iterator,
+        var P = "function" == typeof Symbol && Symbol.iterator,
           C = "@@iterator",
           j = "<<anonymous>>",
           I = {
@@ -10954,36 +10954,40 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         writable: !0
       }) : e[t] = n, e;
     }
-    function a(e, t) {
-      e.prototype = Object.create(t.prototype), e.prototype.constructor = e, c(e, t);
+    function a(e) {
+      if (void 0 === e) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+      return e;
     }
     function c(e, t) {
-      return (c = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (e, t) {
+      e.prototype = Object.create(t.prototype), e.prototype.constructor = e, u(e, t);
+    }
+    function u(e, t) {
+      return (u = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (e, t) {
         return e.__proto__ = t, e;
       })(e, t);
     }
-    var u = n(11),
-      s = n.n(u),
-      l = n(21),
-      f = n.n(l),
-      p = "CardStack component must have at least two child Card components. Please check the children of this CardStack instance.",
-      d = function (e) {
+    var s = n(11),
+      l = n.n(s),
+      f = n(21),
+      p = n.n(f),
+      d = "CardStack component must have at least two child Card components. Please check the children of this CardStack instance.",
+      y = function (e) {
         function t(t) {
           var n;
           n = e.call(this, t) || this;
           var r = t.children,
             o = t.height,
             i = r.length || 1,
-            a = o / i;
-          if (i <= 1) throw new Error(p);
+            c = o / i;
+          if (i <= 1) throw new Error(d);
           return n.initialTopOffsets = t.children.map(function (e, t) {
-            return 0 === t ? 0 : a * t;
+            return 0 === t ? 0 : c * t;
           }), n.state = {
             topOffsets: n.initialTopOffsets,
             cardSelected: !1
-          }, n;
+          }, n.handleCardClick = n.handleCardClick.bind(a(n)), n;
         }
-        a(t, e);
+        c(t, e);
         var n = t.prototype;
         return n.componentDidMount = function () {
           var e = this.props,
@@ -11018,14 +11022,14 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             a = i.cardSelected,
             c = i.topOffsets,
             u = function u(t, o) {
-              return s.a.cloneElement(t, {
+              return l.a.cloneElement(t, {
                 key: o,
                 cardId: o,
                 hoverOffset: n,
                 cardSelected: a,
                 height: r,
                 topOffset: c[o],
-                onClick: e.handleCardClick.bind(e)
+                onClick: e.handleCardClick
               });
             };
           return o.map(u);
@@ -11035,17 +11039,17 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             n = e.height,
             r = e.width,
             i = e.style,
-            a = o(o({}, y), {}, {
+            a = o(o({}, m), {}, {
               background: t,
               height: n,
               width: r
             }, i);
-          return s.a.createElement("ul", {
+          return l.a.createElement("ul", {
             style: a
           }, this.renderCards());
         }, t;
-      }(s.a.Component),
-      y = {
+      }(l.a.Component),
+      m = {
         display: "flex",
         flexDirection: "column",
         position: "relative",
@@ -11054,15 +11058,15 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         margin: 0,
         listStyle: "none"
       };
-    d.propTypes = {
-      background: f.a.string,
-      height: f.a.number,
-      hoverOffset: f.a.number,
-      width: f.a.number,
-      initialCard: f.a.number,
-      children: f.a.node,
-      style: f.a.shape()
-    }, d.defaultProps = {
+    y.propTypes = {
+      background: p.a.string,
+      height: p.a.number,
+      hoverOffset: p.a.number,
+      width: p.a.number,
+      initialCard: p.a.number,
+      children: p.a.node,
+      style: p.a.shape()
+    }, y.defaultProps = {
       width: 350,
       height: 600,
       background: "f8f8f8",
@@ -11070,7 +11074,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       initialCard: -1,
       children: void 0,
       style: {}
-    }, t.a = d;
+    }, t.a = y;
   }, function (e, t, n) {
     "use strict";
 
@@ -11307,16 +11311,16 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
               b = w.value, g = O + r(b, S++), E += o(b, g, i, h);
             } else {
               if ("production" !== t.env.NODE_ENV) {
-                var P = "";
+                var k = "";
                 if (c.current) {
                   var x = c.current.getName();
-                  x && (P = " Check the render method of `" + x + "`.");
+                  x && (k = " Check the render method of `" + x + "`.");
                 }
-                "production" !== t.env.NODE_ENV && p(m, "Using Maps as children is not yet fully supported. It is an experimental feature that might be removed. Convert it to a sequence / iterable of keyed ReactElements instead.%s", P), m = !0;
+                "production" !== t.env.NODE_ENV && p(m, "Using Maps as children is not yet fully supported. It is an experimental feature that might be removed. Convert it to a sequence / iterable of keyed ReactElements instead.%s", k), m = !0;
               }
               for (; !(w = D.next()).done;) {
-                var k = w.value;
-                k && (b = k[1], g = O + f.escape(k[0]) + y + r(b, 0), E += o(b, g, i, h));
+                var P = w.value;
+                P && (b = P[1], g = O + f.escape(P[0]) + y + r(b, 0), E += o(b, g, i, h));
               }
             }
           } else if ("object" === v) {
@@ -11681,7 +11685,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       */
       "production" !== e.env.NODE_ENV && function () {
         function e(e) {
-          return "string" == typeof e || "function" == typeof e || e === g || e === D || e === O || e === E || e === P || e === x || "object" == typeof e && null !== e && (e.$$typeof === C || e.$$typeof === k || e.$$typeof === N || e.$$typeof === _ || e.$$typeof === S || e.$$typeof === I || e.$$typeof === R || e.$$typeof === A || e.$$typeof === j);
+          return "string" == typeof e || "function" == typeof e || e === g || e === D || e === O || e === E || e === k || e === x || "object" == typeof e && null !== e && (e.$$typeof === C || e.$$typeof === P || e.$$typeof === N || e.$$typeof === _ || e.$$typeof === S || e.$$typeof === I || e.$$typeof === R || e.$$typeof === A || e.$$typeof === j);
         }
         function n(e) {
           if ("object" == typeof e && null !== e) {
@@ -11695,7 +11699,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
                   case g:
                   case O:
                   case E:
-                  case P:
+                  case k:
                     return n;
                   default:
                     var r = n && n.$$typeof;
@@ -11703,7 +11707,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
                       case _:
                       case S:
                       case C:
-                      case k:
+                      case P:
                       case N:
                         return r;
                       default:
@@ -11740,7 +11744,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           return n(e) === C;
         }
         function f(e) {
-          return n(e) === k;
+          return n(e) === P;
         }
         function p(e) {
           return n(e) === b;
@@ -11752,7 +11756,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           return n(e) === E;
         }
         function m(e) {
-          return n(e) === P;
+          return n(e) === k;
         }
         var h = "function" == typeof Symbol && Symbol["for"],
           v = h ? Symbol["for"]("react.element") : 60103,
@@ -11765,9 +11769,9 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           w = h ? Symbol["for"]("react.async_mode") : 60111,
           D = h ? Symbol["for"]("react.concurrent_mode") : 60111,
           S = h ? Symbol["for"]("react.forward_ref") : 60112,
-          P = h ? Symbol["for"]("react.suspense") : 60113,
+          k = h ? Symbol["for"]("react.suspense") : 60113,
           x = h ? Symbol["for"]("react.suspense_list") : 60120,
-          k = h ? Symbol["for"]("react.memo") : 60115,
+          P = h ? Symbol["for"]("react.memo") : 60115,
           C = h ? Symbol["for"]("react.lazy") : 60116,
           j = h ? Symbol["for"]("react.block") : 60121,
           I = h ? Symbol["for"]("react.fundamental") : 60117,
@@ -11781,11 +11785,11 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           U = S,
           W = g,
           Y = C,
-          q = k,
+          q = P,
           B = b,
           z = O,
           L = E,
-          G = P,
+          G = k,
           K = !1;
         t.AsyncMode = M, t.ConcurrentMode = T, t.ContextConsumer = V, t.ContextProvider = F, t.Element = $, t.ForwardRef = U, t.Fragment = W, t.Lazy = Y, t.Memo = q, t.Portal = B, t.Profiler = z, t.StrictMode = L, t.Suspense = G, t.isAsyncMode = r, t.isConcurrentMode = o, t.isContextConsumer = i, t.isContextProvider = a, t.isElement = c, t.isForwardRef = u, t.isFragment = s, t.isLazy = l, t.isMemo = f, t.isPortal = p, t.isProfiler = d, t.isStrictMode = y, t.isSuspense = m, t.isValidElementType = e, t.typeOf = n;
       }();
@@ -11874,7 +11878,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         }
         function l(e, t) {
           var n = N.hasOwnProperty(t) ? N[t] : null;
-          P.hasOwnProperty(t) && r("OVERRIDE_BASE" === n, "ReactClassInterface: You are attempting to override `%s` from your class specification. Ensure that your method names do not overlap with React methods.", t), e && r("DEFINE_MANY" === n || "DEFINE_MANY_MERGED" === n, "ReactClassInterface: You are attempting to define `%s` on your component more than once. This conflict may be due to a mixin.", t);
+          k.hasOwnProperty(t) && r("OVERRIDE_BASE" === n, "ReactClassInterface: You are attempting to override `%s` from your class specification. Ensure that your method names do not overlap with React methods.", t), e && r("DEFINE_MANY" === n || "DEFINE_MANY_MERGED" === n, "ReactClassInterface: You are attempting to define `%s` on your component more than once. This conflict may be due to a mixin.", t);
         }
         function d(e, o) {
           if (o) {
@@ -12038,7 +12042,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
               this.__isMounted = !1;
             }
           },
-          P = {
+          k = {
             replaceState: function replaceState(e, t) {
               this.updater.enqueueReplaceState(this, e, t);
             },
@@ -12047,7 +12051,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             }
           },
           x = function x() {};
-        return a(x.prototype, e.prototype, P), E;
+        return a(x.prototype, e.prototype, k), E;
       }
       var a = n(5),
         c = {};
@@ -12211,8 +12215,12 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           });
         }, n.handleClick = function () {
           var e = this.props,
-            t = e.cardId;
-          (0, e.onClick)(t), this.setState({
+            t = e.cardId,
+            n = e.onClick,
+            r = e.onCardClick,
+            o = e.cardSelected,
+            i = e.topOffset;
+          n(t), r && r(t, !o, i), this.setState({
             hover: !1
           });
         }, n.render = function () {
@@ -12273,7 +12281,8 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         MozAppearance: "inherit",
         height: "inherit",
         width: "inherit",
-        position: "inherit"
+        position: "inherit",
+        textAlign: "inherit"
       };
     y.propTypes = {
       background: p.a.string,
@@ -12285,6 +12294,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       topOffset: p.a.number,
       cardId: p.a.number || p.a.string,
       onClick: p.a.func,
+      onCardClick: p.a.func,
       buttonStyle: p.a.shape()
     }, y.defaultProps = {
       height: void 0,
@@ -12296,6 +12306,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       topOffset: void 0,
       cardId: void 0,
       onClick: function onClick() {},
+      onCardClick: function onCardClick() {},
       buttonStyle: {}
     }, t.a = y;
   }, function (e, t, n) {
