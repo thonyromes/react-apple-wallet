@@ -101,6 +101,7 @@ const buttonStyles = {
   height: 'inherit',
   width: 'inherit',
   position: 'inherit',
+  textAlign: 'inherit',
 };
 
 Card.propTypes = {
