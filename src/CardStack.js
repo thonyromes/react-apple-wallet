@@ -1,23 +1,21 @@
-/* eslint-disable */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const equalsZero = num => num === 0;
 const errorMessage =
   'CardStack component must have at least two child Card components. Please check the children of this CardStack instance.';
 
 class CardStack extends React.Component {
   constructor(props) {
     super(props);
-    const { children, height, initialCard } = props;
+    const { children, height } = props;
+
     const childrenLength = children.length || 1;
     const headerHeight = height / childrenLength;
 
     if (childrenLength <= 1) throw new Error(errorMessage);
 
-    this.initialTopOffsets = props.children.map((child, i) =>
-      equalsZero(i) ? 0 : headerHeight * i
+    this.initialTopOffsets = props.children.map((_, i) =>
+      i === 0 ? 0 : headerHeight * i
     );
 
     this.state = {
@@ -26,13 +24,14 @@ class CardStack extends React.Component {
     };
   }
 
-  componentWillMount() {
-    if (this.props.initialCard >= this.props.children.length)
-      console.warn(
+  componentDidMount() {
+    const { initialCard, children } = this.props;
+
+    if (initialCard >= children.length)
+      throw new Error(
         'prop "initialCard" cannot be equal or greater than children.length'
       );
-    else if (this.props.initialCard >= 0)
-      this.handleCardClick(this.props.initialCard);
+    else if (initialCard >= 0) this.handleCardClick(initialCard);
   }
 
   handleCardClick(id, cb) {
@@ -40,10 +39,12 @@ class CardStack extends React.Component {
       topOffsets: [],
       cardSelected: true,
     };
-    const { cardSelected } = this.state;
+
+    const { cardSelected, topOffsets } = this.state;
+    const { height } = this.props;
 
     const nextState = (prev, offset, index) => {
-      const newOffset = index === id ? 0 : this.props.height;
+      const newOffset = index === id ? 0 : height;
       return {
         cardSelected: !cardSelected,
         topOffsets: [
@@ -53,32 +54,38 @@ class CardStack extends React.Component {
       };
     };
 
-    this.setState(this.state.topOffsets.reduce(nextState, initialState));
+    this.setState(topOffsets.reduce(nextState, initialState));
 
-    if (cb) cb(this.state.cardSelected, id);
+    if (cb) cb(cardSelected, id);
   }
 
   renderCards() {
+    const { hoverOffset, height, children } = this.props;
+    const { cardSelected, topOffsets } = this.state;
+
     const cloneCard = (child, i) =>
       React.cloneElement(child, {
         key: i,
         cardId: i,
-        hoverOffset: this.props.hoverOffset,
-        cardSelected: this.state.cardSelected,
-        height: this.props.height,
-        topOffset: this.state.topOffsets[i],
+        hoverOffset,
+        cardSelected,
+        height,
+        topOffset: topOffsets[i],
         onClick: this.handleCardClick.bind(this),
       });
 
-    return this.props.children.map(cloneCard);
+    return children.map(cloneCard);
   }
 
   render() {
+    const { background, height, width, style } = this.props;
+
     const stackStyles = {
       ...styles,
-      background: this.props.background,
-      height: this.props.height,
-      width: this.props.width,
+      background,
+      height,
+      width,
+      ...style,
     };
     return <ul style={stackStyles}>{this.renderCards()}</ul>;
   }
@@ -99,14 +106,18 @@ CardStack.propTypes = {
   hoverOffset: PropTypes.number,
   width: PropTypes.number,
   initialCard: PropTypes.number,
+  children: PropTypes.node,
+  style: PropTypes.shape(),
 };
 
 CardStack.defaultProps = {
   width: 350,
   height: 600,
-  bgColor: 'f8f8f8',
+  background: 'f8f8f8',
   hoverOffset: 30,
   initialCard: -1,
+  children: undefined,
+  style: {},
 };
 
 export default CardStack;

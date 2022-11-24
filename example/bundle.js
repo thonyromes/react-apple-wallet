@@ -9780,7 +9780,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       return t.d(n, "a", n), n;
     }, t.o = function (e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
-    }, t.p = "", t(t.s = 21);
+    }, t.p = "", t(t.s = 22);
   }([function (e, t) {
     function n() {
       throw new Error("setTimeout has not been defined");
@@ -10414,7 +10414,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
   }, function (e, t, n) {
     "use strict";
 
-    e.exports = n(23);
+    e.exports = n(24);
   }, function (e, t, n) {
     "use strict";
 
@@ -10430,7 +10430,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         c = n(5),
         u = n(13),
         s = n(6),
-        l = n(24),
+        l = n(25),
         p = n(4),
         f = n(8);
       if (r.prototype.isReactComponent = {}, r.prototype.setState = function (e, n) {
@@ -10573,7 +10573,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       var s = n(7),
         l = n(9),
         p = n(1),
-        f = n(30),
+        f = n(31),
         d = n(6),
         y = n(16),
         m = n(3),
@@ -10628,7 +10628,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         i = n(5),
         a = n(10),
         c = n(20),
-        u = n(37),
+        u = n(38),
         s = function s() {};
       "production" !== t.env.NODE_ENV && (s = function s(e) {
         var t = "Warning: " + e;
@@ -10638,7 +10638,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         } catch (e) {}
       }), e.exports = function (e, n) {
         function l(e) {
-          var t = e && (k && e[k] || e[C]);
+          var t = e && (k && e[k] || e[j]);
           if ("function" == typeof t) return t;
         }
         function p(e, t) {
@@ -10649,7 +10649,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         }
         function d(e) {
           function r(r, c, u, l, p, d, y) {
-            if (l = l || j, d = d || u, y !== a) {
+            if (l = l || C, d = d || u, y !== a) {
               if (n) {
                 var m = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
                 throw m.name = "Invariant Violation", m;
@@ -10694,7 +10694,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         function h(e) {
           function t(t, n, r, o, i) {
             if (!(t[n] instanceof e)) {
-              var a = e.name || j;
+              var a = e.name || C;
               return new f("Invalid " + o + " `" + i + "` of type `" + x(t[n]) + "` supplied to `" + r + "`, expected instance of `" + a + "`.");
             }
             return null;
@@ -10840,11 +10840,11 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           }
         }
         function x(e) {
-          return e.constructor && e.constructor.name ? e.constructor.name : j;
+          return e.constructor && e.constructor.name ? e.constructor.name : C;
         }
         var k = "function" == typeof Symbol && Symbol.iterator,
-          C = "@@iterator",
-          j = "<<anonymous>>",
+          j = "@@iterator",
+          C = "<<anonymous>>",
           I = {
             array: y("array"),
             bigint: y("bigint"),
@@ -10898,17 +10898,24 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
     "use strict";
 
     (function (t) {
-      "production" === t.env.NODE_ENV ? e.exports = n(35) : e.exports = n(36);
+      "production" === t.env.NODE_ENV ? e.exports = n(36) : e.exports = n(37);
     }).call(t, n(0));
   }, function (e, t) {
     e.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+  }, function (e, t, n) {
+    (function (t) {
+      if ("production" !== t.env.NODE_ENV) {
+        var r = n(19);
+        e.exports = n(18)(r.isElement, !0);
+      } else e.exports = n(43)();
+    }).call(t, n(0));
   }, function (e, t, n) {
     "use strict";
 
     Object.defineProperty(t, "__esModule", {
       value: !0
     });
-    var r = n(22),
+    var r = n(23),
       o = n(44);
     n.d(t, "Card", function () {
       return o.a;
@@ -10957,23 +10964,20 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
     }
     var u = n(11),
       s = n.n(u),
-      l = n(42),
+      l = n(21),
       p = n.n(l),
-      f = function f(e) {
-        return 0 === e;
-      },
-      d = "CardStack component must have at least two child Card components. Please check the children of this CardStack instance.",
-      y = function (e) {
+      f = "CardStack component must have at least two child Card components. Please check the children of this CardStack instance.",
+      d = function (e) {
         function t(t) {
           var n;
           n = e.call(this, t) || this;
           var r = t.children,
             o = t.height,
-            i = (t.initialCard, r.length || 1),
+            i = r.length || 1,
             a = o / i;
-          if (i <= 1) throw new Error(d);
+          if (i <= 1) throw new Error(f);
           return n.initialTopOffsets = t.children.map(function (e, t) {
-            return f(t) ? 0 : a * t;
+            return 0 === t ? 0 : a * t;
           }), n.state = {
             topOffsets: n.initialTopOffsets,
             cardSelected: !1
@@ -10981,49 +10985,67 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         }
         a(t, e);
         var n = t.prototype;
-        return n.componentWillMount = function () {
-          this.props.initialCard >= this.props.children.length ? console.warn('prop "initialCard" cannot be equal or greater than children.length') : this.props.initialCard >= 0 && this.handleCardClick(this.props.initialCard);
+        return n.componentDidMount = function () {
+          var e = this.props,
+            t = e.initialCard;
+          if (t >= e.children.length) throw new Error('prop "initialCard" cannot be equal or greater than children.length');
+          t >= 0 && this.handleCardClick(t);
         }, n.handleCardClick = function (e, t) {
           var n = this,
             r = {
               topOffsets: [],
               cardSelected: !0
             },
-            o = this.state.cardSelected,
-            i = function i(t, r, _i) {
-              var a = _i === e ? 0 : n.props.height;
+            o = this.state,
+            i = o.cardSelected,
+            a = o.topOffsets,
+            c = this.props.height,
+            u = function u(t, r, o) {
+              var a = o === e ? 0 : c;
               return {
-                cardSelected: !o,
-                topOffsets: [].concat(t.topOffsets, [o ? n.initialTopOffsets[_i] : a])
+                cardSelected: !i,
+                topOffsets: [].concat(t.topOffsets, [i ? n.initialTopOffsets[o] : a])
               };
             };
-          this.setState(this.state.topOffsets.reduce(i, r)), t && t(this.state.cardSelected, e);
+          this.setState(a.reduce(u, r)), t && t(i, e);
         }, n.renderCards = function () {
           var e = this,
-            t = function t(_t, n) {
-              return s.a.cloneElement(_t, {
-                key: n,
-                cardId: n,
-                hoverOffset: e.props.hoverOffset,
-                cardSelected: e.state.cardSelected,
-                height: e.props.height,
-                topOffset: e.state.topOffsets[n],
+            t = this.props,
+            n = t.hoverOffset,
+            r = t.height,
+            o = t.children,
+            i = this.state,
+            a = i.cardSelected,
+            c = i.topOffsets,
+            u = function u(t, o) {
+              return s.a.cloneElement(t, {
+                key: o,
+                cardId: o,
+                hoverOffset: n,
+                cardSelected: a,
+                height: r,
+                topOffset: c[o],
                 onClick: e.handleCardClick.bind(e)
               });
             };
-          return this.props.children.map(t);
+          return o.map(u);
         }, n.render = function () {
-          var e = o(o({}, m), {}, {
-            background: this.props.background,
-            height: this.props.height,
-            width: this.props.width
-          });
+          var e = this.props,
+            t = e.background,
+            n = e.height,
+            r = e.width,
+            i = e.style,
+            a = o(o({}, y), {}, {
+              background: t,
+              height: n,
+              width: r
+            }, i);
           return s.a.createElement("ul", {
-            style: e
+            style: a
           }, this.renderCards());
         }, t;
       }(s.a.Component),
-      m = {
+      y = {
         display: "flex",
         flexDirection: "column",
         position: "relative",
@@ -11031,32 +11053,36 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         padding: 0,
         margin: 0
       };
-    y.propTypes = {
+    d.propTypes = {
       background: p.a.string,
       height: p.a.number,
       hoverOffset: p.a.number,
       width: p.a.number,
-      initialCard: p.a.number
-    }, y.defaultProps = {
+      initialCard: p.a.number,
+      children: p.a.node,
+      style: p.a.shape()
+    }, d.defaultProps = {
       width: 350,
       height: 600,
-      bgColor: "f8f8f8",
+      background: "f8f8f8",
       hoverOffset: 30,
-      initialCard: -1
-    }, t.a = y;
+      initialCard: -1,
+      children: void 0,
+      style: {}
+    }, t.a = d;
   }, function (e, t, n) {
     "use strict";
 
     (function (t) {
       var r = n(5),
         o = n(12),
-        i = n(25),
-        a = n(29),
+        i = n(26),
+        a = n(30),
         c = n(1),
-        u = n(33),
-        s = n(38),
-        l = n(39),
-        p = n(41),
+        u = n(34),
+        s = n(39),
+        l = n(40),
+        p = n(42),
         f = c.createElement,
         d = c.createFactory,
         y = c.cloneElement;
@@ -11179,10 +11205,10 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       var t = [];
       return s(e, t, null, h.thatReturnsArgument), t;
     }
-    var y = n(26),
+    var y = n(27),
       m = n(1),
       h = n(14),
-      v = n(27),
+      v = n(28),
       b = y.twoArgumentPooler,
       g = y.fourArgumentPooler,
       E = /\/+/g;
@@ -11293,13 +11319,13 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
               }
             }
           } else if ("object" === v) {
-            var C = "";
-            if ("production" !== t.env.NODE_ENV && (C = " If you meant to render a collection of children, use an array instead or wrap the object using createFragment(object) from the React add-ons.", e._isReactElement && (C = " It looks like you're using an element created by a different version of React. Make sure to use only one copy of React."), c.current)) {
-              var j = c.current.getName();
-              j && (C += " Check the render method of `" + j + "`.");
+            var j = "";
+            if ("production" !== t.env.NODE_ENV && (j = " If you meant to render a collection of children, use an array instead or wrap the object using createFragment(object) from the React add-ons.", e._isReactElement && (j = " It looks like you're using an element created by a different version of React. Make sure to use only one copy of React."), c.current)) {
+              var C = c.current.getName();
+              C && (j += " Check the render method of `" + C + "`.");
             }
             var I = String(e);
-            "production" !== t.env.NODE_ENV ? l(!1, "Objects are not valid as a React child (found: %s).%s", "[object Object]" === I ? "object with keys {" + Object.keys(e).join(", ") + "}" : I, C) : a("31", "[object Object]" === I ? "object with keys {" + Object.keys(e).join(", ") + "}" : I, C);
+            "production" !== t.env.NODE_ENV ? l(!1, "Objects are not valid as a React child (found: %s).%s", "[object Object]" === I ? "object with keys {" + Object.keys(e).join(", ") + "}" : I, j) : a("31", "[object Object]" === I ? "object with keys {" + Object.keys(e).join(", ") + "}" : I, j);
           }
         }
         return E;
@@ -11312,7 +11338,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         u = n(15),
         s = n(16),
         l = n(4),
-        p = n(28),
+        p = n(29),
         f = n(3),
         d = ".",
         y = ":",
@@ -11514,8 +11540,8 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       }
       var o,
         i = n(2),
-        a = n(31),
-        c = n(32),
+        a = n(32),
+        c = n(33),
         u = n(4),
         s = n(3);
       void 0 !== t && t.env && "test" === t.env.NODE_ENV && (o = n(9));
@@ -11542,7 +11568,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
 
     var r = n(1),
       o = r.isValidElement,
-      i = n(34);
+      i = n(35);
     e.exports = i(o);
   }, function (e, t, n) {
     "use strict";
@@ -11654,7 +11680,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       */
       "production" !== e.env.NODE_ENV && function () {
         function e(e) {
-          return "string" == typeof e || "function" == typeof e || e === g || e === D || e === O || e === E || e === P || e === x || "object" == typeof e && null !== e && (e.$$typeof === C || e.$$typeof === k || e.$$typeof === N || e.$$typeof === _ || e.$$typeof === S || e.$$typeof === I || e.$$typeof === R || e.$$typeof === A || e.$$typeof === j);
+          return "string" == typeof e || "function" == typeof e || e === g || e === D || e === O || e === E || e === P || e === x || "object" == typeof e && null !== e && (e.$$typeof === j || e.$$typeof === k || e.$$typeof === N || e.$$typeof === _ || e.$$typeof === S || e.$$typeof === I || e.$$typeof === R || e.$$typeof === A || e.$$typeof === C);
         }
         function n(e) {
           if ("object" == typeof e && null !== e) {
@@ -11675,7 +11701,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
                     switch (r) {
                       case _:
                       case S:
-                      case C:
+                      case j:
                       case k:
                       case N:
                         return r;
@@ -11710,7 +11736,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           return n(e) === g;
         }
         function l(e) {
-          return n(e) === C;
+          return n(e) === j;
         }
         function p(e) {
           return n(e) === k;
@@ -11741,8 +11767,8 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           P = h ? Symbol["for"]("react.suspense") : 60113,
           x = h ? Symbol["for"]("react.suspense_list") : 60120,
           k = h ? Symbol["for"]("react.memo") : 60115,
-          C = h ? Symbol["for"]("react.lazy") : 60116,
-          j = h ? Symbol["for"]("react.block") : 60121,
+          j = h ? Symbol["for"]("react.lazy") : 60116,
+          C = h ? Symbol["for"]("react.block") : 60121,
           I = h ? Symbol["for"]("react.fundamental") : 60117,
           R = h ? Symbol["for"]("react.responder") : 60118,
           A = h ? Symbol["for"]("react.scope") : 60119,
@@ -11753,7 +11779,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           $ = v,
           U = S,
           W = g,
-          Y = C,
+          Y = j,
           q = k,
           B = b,
           z = O,
@@ -11817,7 +11843,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       i = n(1),
       a = i.isValidElement,
       c = n(13),
-      u = n(40);
+      u = n(41);
     e.exports = u(o, a, c);
   }, function (e, t, n) {
     "use strict";
@@ -12075,13 +12101,6 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       e.exports = r;
     }).call(t, n(0));
   }, function (e, t, n) {
-    (function (t) {
-      if ("production" !== t.env.NODE_ENV) {
-        var r = n(19);
-        e.exports = n(18)(r.isElement, !0);
-      } else e.exports = n(43)();
-    }).call(t, n(0));
-  }, function (e, t, n) {
     "use strict";
 
     function r() {}
@@ -12169,7 +12188,9 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
     }
     var s = n(11),
       l = n.n(s),
-      p = function (e) {
+      p = n(21),
+      f = n.n(p),
+      d = function (e) {
         function t(t) {
           var n;
           return n = e.call(this, t) || this, n.state = {
@@ -12179,7 +12200,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         c(t, e);
         var n = t.prototype;
         return n.handleMouseEnter = function () {
-          console.log("test"), this.setState({
+          this.setState({
             hover: !0
           });
         }, n.handleMouseLeave = function () {
@@ -12188,9 +12209,8 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           });
         }, n.handleClick = function () {
           var e = this.props,
-            t = e.cardId,
-            n = e.cardClicked;
-          this.props.onClick(t, n), this.setState({
+            t = e.cardId;
+          (0, e.onClick)(t), this.setState({
             hover: !1
           });
         }, n.render = function () {
@@ -12199,31 +12219,75 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             n = e.cardSelected,
             r = e.topOffset,
             i = e.hoverOffset,
-            a = 0 !== t && this.state.hover && !n ? i : 0,
-            c = "translate3d(0," + (r - a) + "px,0)",
-            u = o(o({}, f), {}, {
-              background: this.props.background,
-              transform: c,
-              WebkitTransform: c,
-              height: this.props.height
-            });
+            a = e.background,
+            c = e.height,
+            u = e.style,
+            s = e.children,
+            p = this.state.hover,
+            f = 0 !== t && p && !n ? i : 0,
+            d = "translate3d(0," + (r - f) + "px,0)",
+            h = o(o({}, y), {}, {
+              background: a,
+              transform: d,
+              WebkitTransform: d,
+              height: c
+            }, u);
           return l.a.createElement("li", {
-            style: u,
+            style: h
+          }, l.a.createElement("button", {
+            style: m,
+            type: "button",
             onClick: this.handleClick.bind(this),
             onMouseEnter: this.handleMouseEnter,
-            onMouseLeave: this.handleMouseLeave
-          }, this.props.children);
+            onMouseLeave: this.handleMouseLeave,
+            onKeyUp: this.handleClick.bind(this)
+          }, s));
         }, t;
       }(l.a.Component),
-      f = {
+      y = {
         position: "absolute",
         top: 0,
         width: "100%",
         cursor: "pointer",
         transition: "0.5s transform ease",
         WebkitTransition: "-webkit-transform 0.5s ease"
+      },
+      m = {
+        display: "inherit",
+        border: "inherit",
+        padding: "inherit",
+        margin: "inherit",
+        textDecoration: "inherit",
+        background: "inherit",
+        color: "inherit",
+        cursor: "inherit",
+        WebkitAppearance: "inherit",
+        MozAppearance: "inherit",
+        height: "inherit",
+        width: "inherit",
+        position: "inherit"
       };
-    t.a = p;
+    d.propTypes = {
+      background: f.a.string,
+      height: f.a.number,
+      hoverOffset: f.a.number,
+      children: f.a.node,
+      style: f.a.shape(),
+      cardSelected: f.a.bool,
+      topOffset: f.a.number,
+      cardId: f.a.number || f.a.string,
+      onClick: f.a.func
+    }, d.defaultProps = {
+      height: void 0,
+      background: "transparent",
+      hoverOffset: void 0,
+      children: void 0,
+      style: {},
+      cardSelected: !1,
+      topOffset: void 0,
+      cardId: void 0,
+      onClick: function onClick() {}
+    }, t.a = d;
   }]);
 });
 

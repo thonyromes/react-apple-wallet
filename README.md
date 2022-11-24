@@ -20,7 +20,7 @@ To build the example locally, clone this repo then run:
 ```
 npm install
 npm start
-Then open localhost:8080 in a browser.
+Then open localhost:9000 in a browser.
 ```
 
 ## Usage
@@ -62,7 +62,7 @@ When all `Card` components are collapsed, the top of each card will be visible. 
 Property  | Type | Default | Description
 ------------- | ------------- | ------ | --------
 width       | number | 350px  | the width of the component
-height      | number | 500px  | the height of the component
+height      | number | 600px  | the height of the component
 background  | string | f8f8f8 | can be a hex, rgba, gradiant value or a url()
 hoverOffset | number | 30px   | how far the card will shift up when being hovered
 initialCard | number | -1     | if provided, the card at i'th index will be initially visible

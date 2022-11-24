@@ -1,6 +1,5 @@
-/* eslint-disable */
-
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Card extends React.Component {
   constructor(props) {
@@ -12,7 +11,6 @@ class Card extends React.Component {
   }
 
   handleMouseEnter() {
-    console.log('test');
     this.setState({ hover: true });
   }
 
@@ -21,34 +19,49 @@ class Card extends React.Component {
   }
 
   handleClick() {
-    const { cardId, cardClicked } = this.props;
-    this.props.onClick(cardId, cardClicked);
+    const { cardId, onClick } = this.props;
+    onClick(cardId);
     this.setState({ hover: false });
   }
 
   render() {
-    const { cardId, cardSelected, topOffset, hoverOffset } = this.props;
+    const {
+      cardId,
+      cardSelected,
+      topOffset,
+      hoverOffset,
+      background,
+      height,
+      style,
+      children,
+      buttonStyle,
+    } = this.props;
+    const { hover } = this.state;
 
-    const offset =
-      cardId !== 0 && this.state.hover && !cardSelected ? hoverOffset : 0;
+    const offset = cardId !== 0 && hover && !cardSelected ? hoverOffset : 0;
     const transform = `translate3d(0,${topOffset - offset}px,0)`;
 
     const cardStyles = {
       ...styles,
-      background: this.props.background,
+      background,
       transform,
       WebkitTransform: transform,
-      height: this.props.height,
+      height,
+      ...style,
     };
 
     return (
-      <li
-        style={cardStyles}
-        onClick={this.handleClick.bind(this)}
-        onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseLeave}
-      >
-        {this.props.children}
+      <li style={cardStyles}>
+        <button
+          style={{ ...buttonStyles, ...buttonStyle }}
+          type="button"
+          onClick={this.handleClick.bind(this)}
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}
+          onKeyUp={this.handleClick.bind(this)}
+        >
+          {children}
+        </button>
       </li>
     );
   }
@@ -61,6 +74,48 @@ const styles = {
   cursor: 'pointer',
   transition: '0.5s transform ease',
   WebkitTransition: '-webkit-transform 0.5s ease',
+};
+
+const buttonStyles = {
+  display: 'inherit',
+  border: 'inherit',
+  padding: 'inherit',
+  margin: 'inherit',
+  textDecoration: 'inherit',
+  background: 'inherit',
+  color: 'inherit',
+  cursor: 'inherit',
+  WebkitAppearance: 'inherit',
+  MozAppearance: 'inherit',
+  height: 'inherit',
+  width: 'inherit',
+  position: 'inherit',
+};
+
+Card.propTypes = {
+  background: PropTypes.string,
+  height: PropTypes.number,
+  hoverOffset: PropTypes.number,
+  children: PropTypes.node,
+  style: PropTypes.shape(),
+  cardSelected: PropTypes.bool,
+  topOffset: PropTypes.number,
+  cardId: PropTypes.number || PropTypes.string,
+  onClick: PropTypes.func,
+  buttonStyle: PropTypes.shape(),
+};
+
+Card.defaultProps = {
+  height: undefined,
+  background: 'transparent',
+  hoverOffset: undefined,
+  children: undefined,
+  style: {},
+  cardSelected: false,
+  topOffset: undefined,
+  cardId: undefined,
+  onClick: () => {},
+  buttonStyle: {},
 };
 
 export default Card;
