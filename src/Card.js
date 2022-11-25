@@ -64,16 +64,8 @@ class Card extends React.Component {
       WebkitTransform: transform,
       height,
       ...style,
-      ...(hover
-        ? {
-            ...cardHoverStyle,
-          }
-        : {}),
-      ...(cardSelected
-        ? {
-            ...cardSelectedStyle,
-          }
-        : {}),
+      ...(hover ? cardHoverStyle : {}),
+      ...(cardSelected ? cardSelectedStyle : {}),
     };
 
     return (

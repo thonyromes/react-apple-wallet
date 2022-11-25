@@ -116,7 +116,7 @@ CardStack.propTypes = {
 CardStack.defaultProps = {
   width: 350,
   height: 600,
-  background: 'f8f8f8',
+  background: 'transparent',
   hoverOffset: 30,
   initialCard: -1,
   children: undefined,
