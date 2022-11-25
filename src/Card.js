@@ -49,6 +49,8 @@ class Card extends React.Component {
       style,
       children,
       buttonStyle,
+      cardSelectedStyle,
+      cardHoverStyle,
     } = this.props;
     const { hover } = this.state;
 
@@ -62,11 +64,22 @@ class Card extends React.Component {
       WebkitTransform: transform,
       height,
       ...style,
+      ...(hover
+        ? {
+            ...cardHoverStyle,
+          }
+        : {}),
+      ...(cardSelected
+        ? {
+            ...cardSelectedStyle,
+          }
+        : {}),
     };
 
     return (
       <li style={cardStyles}>
         <button
+          tabIndex={-1}
           style={{ ...buttonStyles, ...buttonStyle }}
           type="button"
           onClick={event => {
@@ -129,6 +142,8 @@ Card.propTypes = {
   onClick: PropTypes.func,
   onCardClick: PropTypes.func,
   buttonStyle: PropTypes.shape(),
+  cardSelectedStyle: PropTypes.shape(),
+  cardHoverStyle: PropTypes.shape(),
 };
 
 Card.defaultProps = {
@@ -141,8 +156,10 @@ Card.defaultProps = {
   topOffset: undefined,
   cardId: undefined,
   onClick: () => {},
-  onCardClick: () => {},
+  onCardClick: undefined,
   buttonStyle: {},
+  cardSelectedStyle: {},
+  cardHoverStyle: {},
 };
 
 export default Card;

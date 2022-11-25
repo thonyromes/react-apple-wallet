@@ -10205,10 +10205,10 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       }
       function c(e) {
         var n,
-          r = k.getDisplayName(e),
-          o = k.getElement(e),
-          a = k.getOwnerID(e);
-        return a && (n = k.getDisplayName(a)), "production" !== t.env.NODE_ENV && b(o, "ReactComponentTreeHook: Missing React element for debugID %s when building stack", e), i(r, o && o._source, n);
+          r = x.getDisplayName(e),
+          o = x.getElement(e),
+          a = x.getOwnerID(e);
+        return a && (n = x.getDisplayName(a)), "production" !== t.env.NODE_ENV && b(o, "ReactComponentTreeHook: Missing React element for debugID %s when building stack", e), i(r, o && o._source, n);
       }
       var u,
         s,
@@ -10246,7 +10246,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           w = function w(e) {
             return "." + e;
           },
-          D = function D(e) {
+          S = function S(e) {
             return parseInt(e.substr(1), 10);
           };
         u = function u(e, t) {
@@ -10259,7 +10259,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           var t = w(e);
           delete N[t];
         }, f = function f() {
-          return Object.keys(N).map(D);
+          return Object.keys(N).map(S);
         }, p = function p(e) {
           var t = w(e);
           _[t] = !0;
@@ -10267,11 +10267,11 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           var t = w(e);
           delete _[t];
         }, y = function y() {
-          return Object.keys(_).map(D);
+          return Object.keys(_).map(S);
         };
       }
-      var S = [],
-        k = {
+      var D = [],
+        x = {
           onSetChildren: function onSetChildren(e, n) {
             var r = s(e);
             r || ("production" !== t.env.NODE_ENV ? v(!1, "Item must have been set") : m("144")), r.childIDs = n;
@@ -10309,14 +10309,14 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
               t.isMounted = !1;
               0 === t.parentID && d(e);
             }
-            S.push(e);
+            D.push(e);
           },
           purgeUnmountedComponents: function purgeUnmountedComponents() {
-            if (!k._preventPurging) {
-              for (var e = 0; e < S.length; e++) {
-                o(S[e]);
+            if (!x._preventPurging) {
+              for (var e = 0; e < D.length; e++) {
+                o(D[e]);
               }
-              S.length = 0;
+              D.length = 0;
             }
           },
           isMounted: function isMounted(e) {
@@ -10332,11 +10332,11 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             }
             var o = h.current,
               c = o && o._debugID;
-            return t += k.getStackAddendumByID(c);
+            return t += x.getStackAddendumByID(c);
           },
           getStackAddendumByID: function getStackAddendumByID(e) {
             for (var t = ""; e;) {
-              t += c(e), e = k.getParentID(e);
+              t += c(e), e = x.getParentID(e);
             }
             return t;
           },
@@ -10345,7 +10345,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             return t ? t.childIDs : [];
           },
           getDisplayName: function getDisplayName(e) {
-            var t = k.getElement(e);
+            var t = x.getElement(e);
             return t ? a(t) : null;
           },
           getElement: function getElement(e) {
@@ -10353,7 +10353,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             return t ? t.element : null;
           },
           getOwnerID: function getOwnerID(e) {
-            var t = k.getElement(e);
+            var t = x.getElement(e);
             return t && t._owner ? t._owner._debugID : null;
           },
           getParentID: function getParentID(e) {
@@ -10366,7 +10366,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             return null != n ? n._source : null;
           },
           getText: function getText(e) {
-            var t = k.getElement(e);
+            var t = x.getElement(e);
             return "string" == typeof t ? t : "number" == typeof t ? "" + t : null;
           },
           getUpdateCount: function getUpdateCount(e) {
@@ -10382,14 +10382,14 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
                 o = r && r._debugID;
               try {
                 for (e && n.push({
-                  name: o ? k.getDisplayName(o) : null,
+                  name: o ? x.getDisplayName(o) : null,
                   fileName: t ? t.fileName : null,
                   lineNumber: t ? t.lineNumber : null
                 }); o;) {
-                  var i = k.getElement(o),
-                    a = k.getParentID(o),
-                    c = k.getOwnerID(o),
-                    u = c ? k.getDisplayName(c) : null,
+                  var i = x.getElement(o),
+                    a = x.getParentID(o),
+                    c = x.getOwnerID(o),
+                    u = c ? x.getDisplayName(c) : null,
                     s = i && i._source;
                   n.push({
                     name: u,
@@ -10405,7 +10405,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             "function" == typeof console.reactStackEnd && console.reactStackEnd();
           }
         };
-      e.exports = k;
+      e.exports = x;
     }).call(t, n(0));
   }, function (e, t, n) {
     "use strict";
@@ -10669,7 +10669,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         function y(e) {
           function t(t, n, r, o, i, a) {
             var c = t[n];
-            if (D(c) !== e) return new p("Invalid " + o + " `" + i + "` of type `" + S(c) + "` supplied to `" + r + "`, expected `" + e + "`.", {
+            if (S(c) !== e) return new p("Invalid " + o + " `" + i + "` of type `" + D(c) + "` supplied to `" + r + "`, expected `" + e + "`.", {
               expectedType: e
             });
             return null;
@@ -10681,7 +10681,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             if ("function" != typeof e) return new p("Property `" + i + "` of component `" + r + "` has invalid PropType notation inside arrayOf.");
             var c = t[n];
             if (!Array.isArray(c)) {
-              return new p("Invalid " + o + " `" + i + "` of type `" + D(c) + "` supplied to `" + r + "`, expected an array.");
+              return new p("Invalid " + o + " `" + i + "` of type `" + S(c) + "` supplied to `" + r + "`, expected an array.");
             }
             for (var u = 0; u < c.length; u++) {
               var s = e(c, u, r, o, i + "[" + u + "]", a);
@@ -10695,7 +10695,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           function t(t, n, r, o, i) {
             if (!(t[n] instanceof e)) {
               var a = e.name || j;
-              return new p("Invalid " + o + " `" + i + "` of type `" + x(t[n]) + "` supplied to `" + r + "`, expected instance of `" + a + "`.");
+              return new p("Invalid " + o + " `" + i + "` of type `" + k(t[n]) + "` supplied to `" + r + "`, expected instance of `" + a + "`.");
             }
             return null;
           }
@@ -10707,7 +10707,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
               if (f(a, e[c])) return null;
             }
             var u = JSON.stringify(e, function (e, t) {
-              return "symbol" === S(t) ? String(t) : t;
+              return "symbol" === D(t) ? String(t) : t;
             });
             return new p("Invalid " + o + " `" + i + "` of value `" + String(a) + "` supplied to `" + r + "`, expected one of " + u + ".");
           }
@@ -10717,7 +10717,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           function t(t, n, r, o, i) {
             if ("function" != typeof e) return new p("Property `" + i + "` of component `" + r + "` has invalid PropType notation inside objectOf.");
             var u = t[n],
-              s = D(u);
+              s = S(u);
             if ("object" !== s) return new p("Invalid " + o + " `" + i + "` of type `" + s + "` supplied to `" + r + "`, expected an object.");
             for (var l in u) {
               if (c(u, l)) {
@@ -10742,7 +10742,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           if (!Array.isArray(e)) return "production" !== t.env.NODE_ENV && s("Invalid argument supplied to oneOfType, expected an instance of array."), r;
           for (var o = 0; o < e.length; o++) {
             var i = e[o];
-            if ("function" != typeof i) return s("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + k(i) + " at index " + o + "."), r;
+            if ("function" != typeof i) return s("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + x(i) + " at index " + o + "."), r;
           }
           return d(n);
         }
@@ -10752,11 +10752,11 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         function O(e) {
           function t(t, n, r, o, i) {
             var c = t[n],
-              u = D(c);
+              u = S(c);
             if ("object" !== u) return new p("Invalid " + o + " `" + i + "` of type `" + u + "` supplied to `" + r + "`, expected `object`.");
             for (var s in e) {
               var l = e[s];
-              if ("function" != typeof l) return E(r, o, i, s, S(l));
+              if ("function" != typeof l) return E(r, o, i, s, D(l));
               var f = l(c, s, r, o, i + "." + s, a);
               if (f) return f;
             }
@@ -10767,12 +10767,12 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         function N(e) {
           function t(t, n, r, o, u) {
             var s = t[n],
-              l = D(s);
+              l = S(s);
             if ("object" !== l) return new p("Invalid " + o + " `" + u + "` of type `" + l + "` supplied to `" + r + "`, expected `object`.");
             var f = i({}, t[n], e);
             for (var d in f) {
               var y = e[d];
-              if (c(e, d) && "function" != typeof y) return E(r, o, u, d, S(y));
+              if (c(e, d) && "function" != typeof y) return E(r, o, u, d, D(y));
               if (!y) return new p("Invalid " + o + " `" + u + "` key `" + d + "` supplied to `" + r + "`.\nBad object: " + JSON.stringify(t[n], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(e), null, "  "));
               var m = y(s, d, r, o, u + "." + d, a);
               if (m) return m;
@@ -10812,21 +10812,21 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         function w(e, t) {
           return "symbol" === e || !!t && ("Symbol" === t["@@toStringTag"] || "function" == typeof Symbol && t instanceof Symbol);
         }
-        function D(e) {
+        function S(e) {
           var t = typeof e;
           return Array.isArray(e) ? "array" : e instanceof RegExp ? "object" : w(t, e) ? "symbol" : t;
         }
-        function S(e) {
+        function D(e) {
           if (void 0 === e || null === e) return "" + e;
-          var t = D(e);
+          var t = S(e);
           if ("object" === t) {
             if (e instanceof Date) return "date";
             if (e instanceof RegExp) return "regexp";
           }
           return t;
         }
-        function k(e) {
-          var t = S(e);
+        function x(e) {
+          var t = D(e);
           switch (t) {
             case "array":
             case "object":
@@ -10839,7 +10839,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
               return t;
           }
         }
-        function x(e) {
+        function k(e) {
           return e.constructor && e.constructor.name ? e.constructor.name : j;
         }
         var P = "function" == typeof Symbol && Symbol.iterator,
@@ -10862,7 +10862,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
               function t(t, n, r, o, i) {
                 var a = t[n];
                 if (!e(a)) {
-                  return new p("Invalid " + o + " `" + i + "` of type `" + D(a) + "` supplied to `" + r + "`, expected a single ReactElement.");
+                  return new p("Invalid " + o + " `" + i + "` of type `" + S(a) + "` supplied to `" + r + "`, expected a single ReactElement.");
                 }
                 return null;
               }
@@ -10872,7 +10872,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
               function e(e, t, n, r, i) {
                 var a = e[t];
                 if (!o.isValidElementType(a)) {
-                  return new p("Invalid " + r + " `" + i + "` of type `" + D(a) + "` supplied to `" + n + "`, expected a single ReactElement type.");
+                  return new p("Invalid " + r + " `" + i + "` of type `" + S(a) + "` supplied to `" + n + "`, expected a single ReactElement type.");
                 }
                 return null;
               }
@@ -11143,10 +11143,10 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             return m(w, "Accessing createClass via the main React package is deprecated, and will be removed in React v16.0. Use a plain JavaScript class instead. If you're not yet ready to migrate, create-react-class v15.* is available on npm as a temporary, drop-in replacement. For more info see https://fb.me/react-create-class"), w = !0, l;
           }
         })), _.DOM = {};
-        var D = !1;
+        var S = !1;
         Object.keys(a).forEach(function (e) {
           _.DOM[e] = function () {
-            return D || (m(!1, "Accessing factories like React.DOM.%s has been deprecated and will be removed in v16.0+. Use the react-dom-factories package instead.  Version 1.0 provides a drop-in replacement. For more info, see https://fb.me/react-dom-factories", e), D = !0), a[e].apply(a, arguments);
+            return S || (m(!1, "Accessing factories like React.DOM.%s has been deprecated and will be removed in v16.0+. Use the react-dom-factories package instead.  Version 1.0 provides a drop-in replacement. For more info, see https://fb.me/react-dom-factories", e), S = !0), a[e].apply(a, arguments);
           };
         });
       }
@@ -11306,19 +11306,19 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           var _ = s(e);
           if (_) {
             var w,
-              D = _.call(e);
-            if (_ !== e.entries) for (var S = 0; !(w = D.next()).done;) {
-              b = w.value, g = O + r(b, S++), E += o(b, g, i, h);
+              S = _.call(e);
+            if (_ !== e.entries) for (var D = 0; !(w = S.next()).done;) {
+              b = w.value, g = O + r(b, D++), E += o(b, g, i, h);
             } else {
               if ("production" !== t.env.NODE_ENV) {
-                var k = "";
+                var x = "";
                 if (c.current) {
-                  var x = c.current.getName();
-                  x && (k = " Check the render method of `" + x + "`.");
+                  var k = c.current.getName();
+                  k && (x = " Check the render method of `" + k + "`.");
                 }
-                "production" !== t.env.NODE_ENV && p(m, "Using Maps as children is not yet fully supported. It is an experimental feature that might be removed. Convert it to a sequence / iterable of keyed ReactElements instead.%s", k), m = !0;
+                "production" !== t.env.NODE_ENV && p(m, "Using Maps as children is not yet fully supported. It is an experimental feature that might be removed. Convert it to a sequence / iterable of keyed ReactElements instead.%s", x), m = !0;
               }
-              for (; !(w = D.next()).done;) {
+              for (; !(w = S.next()).done;) {
                 var P = w.value;
                 P && (b = P[1], g = O + f.escape(P[0]) + y + r(b, 0), E += o(b, g, i, h));
               }
@@ -11685,7 +11685,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       */
       "production" !== e.env.NODE_ENV && function () {
         function e(e) {
-          return "string" == typeof e || "function" == typeof e || e === g || e === D || e === O || e === E || e === k || e === x || "object" == typeof e && null !== e && (e.$$typeof === C || e.$$typeof === P || e.$$typeof === N || e.$$typeof === _ || e.$$typeof === S || e.$$typeof === I || e.$$typeof === R || e.$$typeof === A || e.$$typeof === j);
+          return "string" == typeof e || "function" == typeof e || e === g || e === S || e === O || e === E || e === x || e === k || "object" == typeof e && null !== e && (e.$$typeof === C || e.$$typeof === P || e.$$typeof === N || e.$$typeof === _ || e.$$typeof === D || e.$$typeof === I || e.$$typeof === R || e.$$typeof === A || e.$$typeof === j);
         }
         function n(e) {
           if ("object" == typeof e && null !== e) {
@@ -11695,17 +11695,17 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
                 var n = e.type;
                 switch (n) {
                   case w:
-                  case D:
+                  case S:
                   case g:
                   case O:
                   case E:
-                  case k:
+                  case x:
                     return n;
                   default:
                     var r = n && n.$$typeof;
                     switch (r) {
                       case _:
-                      case S:
+                      case D:
                       case C:
                       case P:
                       case N:
@@ -11723,7 +11723,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           return K || (K = !0, console.warn("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.")), o(e) || n(e) === w;
         }
         function o(e) {
-          return n(e) === D;
+          return n(e) === S;
         }
         function i(e) {
           return n(e) === _;
@@ -11735,7 +11735,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           return "object" == typeof e && null !== e && e.$$typeof === v;
         }
         function u(e) {
-          return n(e) === S;
+          return n(e) === D;
         }
         function s(e) {
           return n(e) === g;
@@ -11756,7 +11756,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           return n(e) === E;
         }
         function m(e) {
-          return n(e) === k;
+          return n(e) === x;
         }
         var h = "function" == typeof Symbol && Symbol["for"],
           v = h ? Symbol["for"]("react.element") : 60103,
@@ -11767,10 +11767,10 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           N = h ? Symbol["for"]("react.provider") : 60109,
           _ = h ? Symbol["for"]("react.context") : 60110,
           w = h ? Symbol["for"]("react.async_mode") : 60111,
-          D = h ? Symbol["for"]("react.concurrent_mode") : 60111,
-          S = h ? Symbol["for"]("react.forward_ref") : 60112,
-          k = h ? Symbol["for"]("react.suspense") : 60113,
-          x = h ? Symbol["for"]("react.suspense_list") : 60120,
+          S = h ? Symbol["for"]("react.concurrent_mode") : 60111,
+          D = h ? Symbol["for"]("react.forward_ref") : 60112,
+          x = h ? Symbol["for"]("react.suspense") : 60113,
+          k = h ? Symbol["for"]("react.suspense_list") : 60120,
           P = h ? Symbol["for"]("react.memo") : 60115,
           C = h ? Symbol["for"]("react.lazy") : 60116,
           j = h ? Symbol["for"]("react.block") : 60121,
@@ -11778,18 +11778,18 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
           R = h ? Symbol["for"]("react.responder") : 60118,
           A = h ? Symbol["for"]("react.scope") : 60119,
           M = w,
-          T = D,
+          T = S,
           V = _,
           F = N,
           $ = v,
-          U = S,
+          U = D,
           W = g,
           Y = C,
           q = P,
           B = b,
           z = O,
           L = E,
-          G = k,
+          G = x,
           K = !1;
         t.AsyncMode = M, t.ConcurrentMode = T, t.ContextConsumer = V, t.ContextProvider = F, t.Element = $, t.ForwardRef = U, t.Fragment = W, t.Lazy = Y, t.Memo = q, t.Portal = B, t.Profiler = z, t.StrictMode = L, t.Suspense = G, t.isAsyncMode = r, t.isConcurrentMode = o, t.isContextConsumer = i, t.isContextProvider = a, t.isElement = c, t.isForwardRef = u, t.isFragment = s, t.isLazy = l, t.isMemo = f, t.isPortal = p, t.isProfiler = d, t.isStrictMode = y, t.isSuspense = m, t.isValidElementType = e, t.typeOf = n;
       }();
@@ -11878,7 +11878,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
         }
         function l(e, t) {
           var n = N.hasOwnProperty(t) ? N[t] : null;
-          k.hasOwnProperty(t) && r("OVERRIDE_BASE" === n, "ReactClassInterface: You are attempting to override `%s` from your class specification. Ensure that your method names do not overlap with React methods.", t), e && r("DEFINE_MANY" === n || "DEFINE_MANY_MERGED" === n, "ReactClassInterface: You are attempting to define `%s` on your component more than once. This conflict may be due to a mixin.", t);
+          x.hasOwnProperty(t) && r("OVERRIDE_BASE" === n, "ReactClassInterface: You are attempting to override `%s` from your class specification. Ensure that your method names do not overlap with React methods.", t), e && r("DEFINE_MANY" === n || "DEFINE_MANY_MERGED" === n, "ReactClassInterface: You are attempting to define `%s` on your component more than once. This conflict may be due to a mixin.", t);
         }
         function d(e, o) {
           if (o) {
@@ -11974,7 +11974,7 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             var u = this.getInitialState ? this.getInitialState() : null;
             "production" !== t.env.NODE_ENV && void 0 === u && this.getInitialState._isMockFunction && (u = null), r("object" == typeof u && !Array.isArray(u), "%s.getInitialState(): must return an object or null", n.displayName || "ReactCompositeComponent"), this.state = u;
           });
-          n.prototype = new x(), n.prototype.constructor = n, n.prototype.__reactAutoBindPairs = [], O.forEach(d.bind(null, n)), d(n, D), d(n, e), d(n, S), n.getDefaultProps && (n.defaultProps = n.getDefaultProps()), "production" !== t.env.NODE_ENV && (n.getDefaultProps && (n.getDefaultProps.isReactClassApproved = {}), n.prototype.getInitialState && (n.prototype.getInitialState.isReactClassApproved = {})), r(n.prototype.render, "createClass(...): Class specification must implement a `render` method."), "production" !== t.env.NODE_ENV && (s(!n.prototype.componentShouldUpdate, "%s has a method called componentShouldUpdate(). Did you mean shouldComponentUpdate()? The name is phrased as a question because the function is expected to return a value.", e.displayName || "A component"), s(!n.prototype.componentWillRecieveProps, "%s has a method called componentWillRecieveProps(). Did you mean componentWillReceiveProps()?", e.displayName || "A component"), s(!n.prototype.UNSAFE_componentWillRecieveProps, "%s has a method called UNSAFE_componentWillRecieveProps(). Did you mean UNSAFE_componentWillReceiveProps()?", e.displayName || "A component"));
+          n.prototype = new k(), n.prototype.constructor = n, n.prototype.__reactAutoBindPairs = [], O.forEach(d.bind(null, n)), d(n, S), d(n, e), d(n, D), n.getDefaultProps && (n.defaultProps = n.getDefaultProps()), "production" !== t.env.NODE_ENV && (n.getDefaultProps && (n.getDefaultProps.isReactClassApproved = {}), n.prototype.getInitialState && (n.prototype.getInitialState.isReactClassApproved = {})), r(n.prototype.render, "createClass(...): Class specification must implement a `render` method."), "production" !== t.env.NODE_ENV && (s(!n.prototype.componentShouldUpdate, "%s has a method called componentShouldUpdate(). Did you mean shouldComponentUpdate()? The name is phrased as a question because the function is expected to return a value.", e.displayName || "A component"), s(!n.prototype.componentWillRecieveProps, "%s has a method called componentWillRecieveProps(). Did you mean componentWillReceiveProps()?", e.displayName || "A component"), s(!n.prototype.UNSAFE_componentWillRecieveProps, "%s has a method called UNSAFE_componentWillRecieveProps(). Did you mean UNSAFE_componentWillReceiveProps()?", e.displayName || "A component"));
           for (var a in N) {
             n.prototype[a] || (n.prototype[a] = null);
           }
@@ -12032,17 +12032,17 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             },
             autobind: function autobind() {}
           },
-          D = {
+          S = {
             componentDidMount: function componentDidMount() {
               this.__isMounted = !0;
             }
           },
-          S = {
+          D = {
             componentWillUnmount: function componentWillUnmount() {
               this.__isMounted = !1;
             }
           },
-          k = {
+          x = {
             replaceState: function replaceState(e, t) {
               this.updater.enqueueReplaceState(this, e, t);
             },
@@ -12050,8 +12050,8 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
               return "production" !== t.env.NODE_ENV && (s(this.__didWarnIsMounted, "%s: isMounted is deprecated. Instead, make sure to clean up subscriptions and pending requests in componentWillUnmount to prevent memory leaks.", this.constructor && this.constructor.displayName || this.name || "Component"), this.__didWarnIsMounted = !0), !!this.__isMounted;
             }
           },
-          x = function x() {};
-        return a(x.prototype, e.prototype, k), E;
+          k = function k() {};
+        return a(k.prototype, e.prototype, x), E;
       }
       var a = n(5),
         c = {};
@@ -12235,18 +12235,21 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
             s = t.style,
             f = t.children,
             p = t.buttonStyle,
-            y = this.state.hover,
-            v = 0 !== n && y && !r ? a : 0,
-            b = "translate3d(0," + (i - v) + "px,0)",
-            g = o(o({}, m), {}, {
+            y = t.cardSelectedStyle,
+            v = t.cardHoverStyle,
+            b = this.state.hover,
+            g = 0 !== n && b && !r ? a : 0,
+            E = "translate3d(0," + (i - g) + "px,0)",
+            O = o(o(o(o({}, m), {}, {
               background: c,
-              transform: b,
-              WebkitTransform: b,
+              transform: E,
+              WebkitTransform: E,
               height: u
-            }, s);
+            }, s), b ? o({}, v) : {}), r ? o({}, y) : {});
           return l.a.createElement("li", {
-            style: g
+            style: O
           }, l.a.createElement("button", {
+            tabIndex: -1,
             style: o(o({}, h), p),
             type: "button",
             onClick: function onClick(t) {
@@ -12296,7 +12299,9 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       cardId: p.a.number || p.a.string,
       onClick: p.a.func,
       onCardClick: p.a.func,
-      buttonStyle: p.a.shape()
+      buttonStyle: p.a.shape(),
+      cardSelectedStyle: p.a.shape(),
+      cardHoverStyle: p.a.shape()
     }, y.defaultProps = {
       height: void 0,
       background: "transparent",
@@ -12307,8 +12312,10 @@ __WEBPACK_IMPORTED_MODULE_2_react_dom___default.a.render( /*#__PURE__*/__WEBPACK
       topOffset: void 0,
       cardId: void 0,
       onClick: function onClick() {},
-      onCardClick: function onCardClick() {},
-      buttonStyle: {}
+      onCardClick: void 0,
+      buttonStyle: {},
+      cardSelectedStyle: {},
+      cardHoverStyle: {}
     }, t.a = y;
   }, function (e, t, n) {
     "use strict";

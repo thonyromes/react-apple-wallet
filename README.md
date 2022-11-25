@@ -72,10 +72,12 @@ style       | number | {}     | custom style for the cardStack
 
 Property  | Type | Default | Description
 ------------- | ------------- | ------- | -------
-background  | string | undefined | can be a hex, rgba, gradiant value or a url()
-onCardClick | func   | undefined | read below for description on how to use
-style       | number | {}        | custom style for the card
-buttonStyle | number | {}        | custom style for the card button wrapper
+background           | string | transparent | can be a hex, rgba, gradiant value or a url()
+onCardClick          | func   | undefined | read below for description on how to use
+style                | number | {}        | custom style for the card
+buttonStyle          | number | {}        | custom style for the card button wrapper
+cardSelectedStyle    | number | {}        | custom style for the card in selected state
+cardHoverStyle       | number | {}        | custom style for the card in hover state
 
 `onCardClick` is a prop which can be passed to `Card`. It takes a function, acting as a callback, and will get invoked when a user clicks on the card in which you passed it to and it returns `cardId`, `cardSelected`, `topOffset` values. For example, look below:
 
